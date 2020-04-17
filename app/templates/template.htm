@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Dasar</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Flask App</h1>
+            <strong><nav>
+                <ul>
+                    <li><a href="{{ url_for('match_app') }}"> Aplikasi Pencarian </a></li>
+                    <li><a href="{{ url_for('dokumentasi') }}"> Dokumentasi </a></li>
+                </ul>
+            </nav></strong>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>

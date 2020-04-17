@@ -1,5 +1,5 @@
 #kmp biasanya bagus buat string yang banyak characternya sama
-from loader import *
+from .loader import *
 
 def computeFail(pattern):
     fail = [0 for i in range(len(pattern))];
@@ -50,10 +50,10 @@ def findIdxKMPMatch(arrOfText, pattern):
     return(idx)
 
 ##test
-string = load()
-idx = findIdxKMPMatch(string, "kasus")
-for i in idx:
-    print(string[i])
+# string = load()
+# idx = findIdxKMPMatch(string, "kasus")
+# for i in idx:
+#     print(string[i])
 
         
 

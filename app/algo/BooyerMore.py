@@ -1,4 +1,4 @@
-from loader import *
+from .loader import *
 
 def buildLast(pattern):
     #mencari last occurence character di pattern
@@ -48,10 +48,10 @@ def findIdxBMMatch(arrOfText, pattern):
             idx.append(i)
     return(idx)
 
-##test
-string = load()
-idx = findIdxBMMatch(string, "kasus")
-for i in idx:
-    print(string[i])
+# ##test
+# string = load()
+# idx = findIdxBMMatch(string, "kasus")
+# for i in idx:
+#     print(string[i])
 
     

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Ekstrasi</title>
+</head>
+<body>
+    {% extends "template.htm" %}
+    {% block content %}
+
+    <h1> APLIKASI EKSTRASI INFORMASI COVID - 19</h1>
+    <hr>
+    <form action="{{ url_for('match_app') }}" method="POST" enctype="multipart/form-data">
+        <p>Input file :</p>
+        <input type="file" name = "fileInput"> 
+        <br>
+        <br>
+        <p>Input pattern :</p>
+        <input type="form" name = "patternInput">
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+    <h3>Teks :</h3>
+    <p>{{teks}}</p>
+    <br>
+    <h3>Hasil : </h3>
+    {% for i in idx%}
+    <p>{{string[i]}}</p>
+    {% endfor %}
+
+    {% endblock %}
+</body>
+</html>
