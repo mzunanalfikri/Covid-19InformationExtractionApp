@@ -45,13 +45,13 @@ def match_app():
             # print(teks_input_html)
             result = resultExtraction(contents, arr_teks, idx, input_pattern)
             
-    return render_template("match_app.htm", isValid = isValid, teks = contents, arr_teks = arr_teks, idx = idx, algo = input_algo, pattern = input_pattern, result = result)
+    return render_template("match_app.html", isValid = isValid, teks = contents, arr_teks = arr_teks, idx = idx, algo = input_algo, pattern = input_pattern, result = result)
 
 def hasil():
     input_html = request.form['textInput']
     print(input_html)
-    return render_template("match_app.htm")
+    return render_template("match_app.html")
     
 @app.route('/dokumentasi')
 def dokumentasi():
-    return render_template("dokumentasi.htm")
+    return render_template("dokumentasi.html")

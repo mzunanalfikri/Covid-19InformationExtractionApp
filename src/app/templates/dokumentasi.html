@@ -6,10 +6,10 @@
     <title>Dokumentasi</title>
 </head>
 <body>
-    {% extends 'template.htm' %}
+    {% extends 'template.html' %}
     {% block content %}
-    <h1> DOKUMENTASI PROGRAM </h1>
-    <hr>
+    <h1 style="text-align: center;"> DOKUMENTASI PROGRAM </h1>
+    
     <div class='pdf_view'>
         <embed src="{{ url_for('static', filename='file/Laporan.pdf') }}"  width="100%" height="600px" />
     </div>

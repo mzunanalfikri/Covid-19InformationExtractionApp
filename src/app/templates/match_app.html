@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <title>Aplikasi Ekstrasi</title>
+</head>
+<body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <h1 class = "title_app">APLIKASI EKSTRASI INFORMASI COVID - 19</h1>
+    
+    <div class = "input_program">
+        <form action="{{ url_for('match_app') }}" method="POST" enctype="multipart/form-data">
+            <p>Masukkan Kata Kunci:</p>
+            <input type="form" name = "patternInput" id="patternInput">
+            <br>
+
+            
+            <p>Masukkan Teks Berita :</p>
+            <input type="file" name = "fileInput" class="file-input"> 
+            <br>
+            
+            <p>Pilih algoritma yang digunakan : </p>
+            <label class="container">KMP
+                <input type="radio" checked="checked" name="algoInput">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Two
+                <input type="radio" name="algoInput">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Three
+                <input type="radio" name="algoInput">
+                <span class="checkmark"></span>
+            </label>
+            <!-- <input type="radio" name = "algoInput" value="KMP"> Knuth Morris Pratt <br>
+            <input type="radio" name = "algoInput" value ="BM"> Boyer Moore <br>
+            <input type="radio" name = "algoInput" value="regex"> Regular Expression <br> -->
+            <br>
+            <br>
+            <input type="submit" id = "submit_btn" value="Submit">
+            <br><br>
+        </form>
+    </div>
+    
+    <div class="content">
+        {% if isValid == 1%}
+            {% if (algo != "-") %}
+            <h3>Berhasil menggunakan algoritma {{ algo }}</h3>
+            {% endif %}
+            <h3>Teks Berita :</h3>
+            <p>{{teks}}</p>
+            <br>
+
+            <div class = 'Hasil'>
+                <h3>Hasil  pencarian '{{pattern}}':</h3>
+                {% if (result == []) %}
+                    <p>Pattern tidak ditemukan</p>
+                {% else %}
+                    {% for elmt in result%}
+                        {%if (elmt[2] != "") %}
+                            <p>Jumlah : {{elmt[2]}}</p>
+                            <p>Waktu  : {{elmt[1]}}</p>
+                            <p>Kalimat : {{arr_teks[elmt[0]]}}</p>
+                            <br>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% elif isValid == 0%}
+            <h3>Masukan tidak valid !</h3>
+            <h3>Silakan masukkan berita dengan benar.</h3>
+        {% endif %}
+
+        {% endblock %}
+    </div>
+
+</body>
+</html>
