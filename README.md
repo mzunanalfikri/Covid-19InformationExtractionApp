@@ -8,7 +8,7 @@ Aplikasi ekstraksi Covid-19 untuk memenuhi tugas strategi Algotitma.
 ## Prerequisite
 * Python 3.6 - Aplikasi ini menggunakan bahasa python versi 3.6 
 * Flask - Micro framework flask digunakan pada backend
-* nltk - modul nltk digunakan untuk string matching
+* nltk - modul nltk digunakan untuk identifikasi kalimat
 
 ## Cara running
 
