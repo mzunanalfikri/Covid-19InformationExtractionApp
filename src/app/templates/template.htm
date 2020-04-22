@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Template Dasar</title>
+</head>
+<body>
+    <header>
+        <p class="logo">LOGO</p>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="{{ url_for('match_app') }}">Aplikasi</a></li>
+                <li><a href="{{ url_for('dokumentasi') }}">Dokumentasi Program</a></li>
+            </ul>
+        </nav>
+        <a href="https://zunanalfikri.com"><button>Tentang Penulis</button></a>
+    </header>
+    <br>
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>

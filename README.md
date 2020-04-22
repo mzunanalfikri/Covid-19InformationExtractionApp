@@ -1,3 +1,3 @@
 # InformationExtractionApp
 
-cd virtual/Scripts && activate && cd ../..
+cd src && cd virtual/Scripts && activate && cd ../..
